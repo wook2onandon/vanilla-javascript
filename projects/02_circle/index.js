@@ -43,7 +43,7 @@ const colorAndSize = (circle) => {
     return nextRandomColor;
   }
 
-  let nextWidthAndHeight = randomNumber(1,10)
+  let nextWidthAndHeight = randomNumber(50,300)
   let nextRadius = nextWidthAndHeight/2
   let nextColor = randomColor()
 
@@ -60,17 +60,17 @@ const colorAndSize = (circle) => {
     circle.style.backgroundColor = nextColor
     circle.style.borderRadius = nextRadius + 'px'
 
-    nextWidthAndHeight += 0.2
-    nextRadius += 0.1
+    nextWidthAndHeight += 1
+    nextRadius += 0.5
     nextColor = randomColor()
-    if (nextWidthAndHeight > 15) {
+    if (nextWidthAndHeight > 500) {
       clearInterval(intervalSizeAndColor)
       deleteCircle(circle)
     }
   } , 100)
 }
 
-const actionKeydown = (e) => {
+const handleKeydown = (e) => {
   const judgekey = e.keyCode;
   if(judgekey === 68) {
     const createdCircle = createCircle()
@@ -79,13 +79,13 @@ const actionKeydown = (e) => {
   }
 }
 
-const actionClick = (click) => {
-  const clickX = click.clientX;
-  const clickY = click.clientY;
+const handleClick = (e) => {
+  const clickX = e.clientX;
+  const clickY = e.clientY;
   const createdCircle = createCircle()
   circleClickPos(clickX, clickY, createdCircle)
   colorAndSize(createdCircle)
 }
 
-window.addEventListener('keydown', actionKeydown)
-window.addEventListener('click', actionClick)
+window.addEventListener('keydown', handleKeydown)
+window.addEventListener('click', handleClick)
