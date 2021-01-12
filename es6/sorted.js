@@ -92,3 +92,25 @@ const mergeSort = (array) => {
     return resultArray.concat(left.slice(leftIndex), right.slice(rightIndex));
   }
 }
+
+//quick sort
+const quickSort = (array) => {
+  if (array.length < 2) {
+    return array;
+  }
+
+  const pivot = array[0];
+  const left = [];
+  const right = [];
+
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] < pivot) {
+      left.push(array[i]);
+    } else if (array[i] > pivot) {
+      right.push(array[i]);
+    } else {
+      pivot.push(array[i]);
+    }
+  }
+  return quickSort(left).concat(pivot, quickSort(right));
+}
