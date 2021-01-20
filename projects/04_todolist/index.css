@@ -1,0 +1,98 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(148, 180, 206);
+}
+#main_container {
+  width: 50%;
+  height: 80vh;
+  margin-top: 4%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(250, 250, 250);
+  border-radius: 7px;
+}
+
+#title {
+  margin-top: 8%;
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: -3px;
+  color: rgb(77, 77, 77);
+}
+
+#input_text_button_container {
+  width: 100%;
+  display: flex;
+  margin-top: 3%;
+}
+
+#input_text {
+  width:600px; 
+  height:40px;
+  text-align: center;
+  font-size: 15px;
+  border: solid 1px sandybrown;
+}
+
+#input_text:focus {
+  outline: solid 1px sandybrown;
+}
+
+#input_button {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  margin-left: 0.7%;
+  justify-content: center;
+  color:rgb(250, 250, 250);
+  font-size: 30px;
+  background-color: rgb(148, 180, 206);
+  border: none;
+}
+
+#input_button:focus {
+  outline:solid 1px rgb(110, 134, 153);
+}
+
+#input_list_container {
+  margin-top: 3%;
+}
+
+#input_list {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0px 8px;
+  border-top: 1px solid rgb(148, 180, 206);
+  border-bottom: 1px solid rgb(148, 180, 206);
+}
+
+#list_edit_container {
+  width: 13%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#edit_button {
+  background-color: rgb(148, 180, 206);
+  border: none;
+  margin-left: -2%;
+  color:rgb(250, 250, 250);
+}
+
+#edit_button:focus {
+  outline:solid 1px rgb(110, 134, 153);
+}
+
+#delete_button {
+  background-color: rgb(148, 180, 206);
+  border: none;
+  margin-left: -10%;
+  color:rgb(250, 250, 250);
+}
+
+#delete_button:focus {
+  outline:solid 1px rgb(110, 134, 153);
+}
