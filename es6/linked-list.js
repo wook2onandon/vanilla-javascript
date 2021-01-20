@@ -1,42 +1,88 @@
+//이중linked-list
+class Subway {
+  name;
+  prev;
+  next;
 
-//이중연결리스트
-const Subway = (name) => {
-  let _name, _next, _prev;
-  _name = name;
-  _next = null;
-  _prev = null;
-  return {
-    _name,
-    _next,
-    _prev
+  constructor(name, next = []) {
+    this.name = name;
+    this.next = next
   }
-}
 
-const DoubleLinkedList = () => {
-  let _length, _head, _tail;
-  _length = 0;
-  _head = null;
-  _tail = null;
-}
-
-const append = (value) => {
-  const node = Subway(value);
-  let current = _head;
-  if (!current) {
-    _head = node;
-    _length++;
-    return node;
-  } else {
-    while (current.next) {
-      current = current.next;
-    }
-    current.next = node;
-    _length++;
-    return node;
+  appendNext(child) {
+    this.next.push(child)
+    child.setPrev(this)
   }
+
+  setPrev(prev) {
+    this.prev = prev
+  }
+
 }
 
-const seoul = Subway('seoul')
-const daegu = Subway('daegu')
-DoubleLinkedList()
-console.log(DoubleLinkedList()); 
+const a = new Subway('A', [])
+const b = new Subway('B', [])
+const e = new Subway('E', [])
+const f = new Subway('F', [])
+const j = new Subway('J', [])
+
+a.appendNext(b)
+b.appendNext(e)
+b.appendNext(f)
+f.appendNext(j)
+
+//선형linked-list
+class Subway {
+  name;
+  next;
+
+  constructor(name, next = []) {
+    this.name = name;
+    this.next = next
+  }
+
+  appendNext(child) {
+    this.next.push(child)
+  }
+
+}
+
+const a = new Subway('A', [])
+const b = new Subway('B', [])
+const e = new Subway('E', [])
+const f = new Subway('F', [])
+const j = new Subway('J', [])
+
+//원형linked-list
+class Subway {
+  name;
+  prev;
+  next;
+
+  constructor(name, next = []) {
+    this.name = name;
+    this.next = next
+  }
+
+  appendNext(child) {
+    this.next.push(child)
+    child.setPrev(this)
+  }
+
+  setPrev(prev) {
+    this.prev = prev
+  }
+
+}
+
+const a = new Subway('A', [])
+const b = new Subway('B', [])
+const e = new Subway('E', [])
+const f = new Subway('F', [])
+const j = new Subway('J', [])
+
+a.appendNext(b)
+b.appendNext(e)
+b.appendNext(f)
+f.appendNext(j)
+j.appendNext(a)
