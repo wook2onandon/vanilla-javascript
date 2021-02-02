@@ -65,8 +65,12 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 8px 0px 8px;
-  border-top: 1px solid rgb(148, 180, 206);
   border-bottom: 1px solid rgb(148, 180, 206);
+  /* position: relative; */
+}
+
+#input_list:first-child {
+  border-top: 1px solid rgb(148, 180, 206);
 }
 
 #list_edit_container {
@@ -76,6 +80,8 @@ body {
 }
 
 #edit_button {
+  /* position: absolute;
+  right: 60px; */
   background-color: rgb(148, 180, 206);
   border: none;
   margin-left: -2%;
@@ -87,6 +93,8 @@ body {
 }
 
 #delete_button {
+  /* position: absolute;
+  right: 2px; */
   background-color: rgb(148, 180, 206);
   border: none;
   margin-left: -10%;
